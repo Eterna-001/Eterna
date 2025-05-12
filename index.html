@@ -3,114 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eterna – Legacy Isn’t Found. It’s Auctioned.</title>
+  <title>Eterna – The Digital World Awaits</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* General Reset */
+    * {
       margin: 0;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #101010;
+      color: #f4f4f4;
+      overflow-x: hidden;
+    }
+
+    /* Header */
     header {
-      padding: 2rem 4rem;
+      padding: 3rem 6rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #1e1e1e;
+      border-bottom: 2px solid #2c2c2c;
+      position: relative;
     }
+
     .logo {
       font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: #bfa46f;
-      letter-spacing: 0.2em;
+      font-size: 2.5rem;
+      color: #e5a200;  /* Golden tone for a luxury feel */
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
     }
+
     nav a {
-      color: #999;
-      margin-left: 2.5rem;
+      color: #ccc;
+      margin-left: 3rem;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
+      font-size: 1.1rem;
     }
+
     nav a:hover {
       color: #fff;
     }
+
+    /* Hero Section */
     .hero {
-      padding: 8rem 2rem 6rem;
+      padding: 10rem 2rem 6rem;
       text-align: center;
-      background: linear-gradient(to bottom, #0a0a0a, #111);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x800') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      color: white;
+      position: relative;
     }
+
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: 3.2rem;
-      color: #f0f0f0;
-      letter-spacing: 0.05em;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #e5a200; /* Gold color to emphasize luxury */
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     }
+
     .hero p {
-      font-size: 1.1rem;
-      max-width: 580px;
+      font-size: 1.3rem;
+      max-width: 600px;
       margin: 1.5rem auto;
-      color: #aaa;
-      line-height: 1.6;
+      color: #ddd;
+      line-height: 1.8;
+      font-weight: 500;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
     }
-    .cta {
-      margin-top: 2.5rem;
-    }
+
     .cta button {
       background-color: transparent;
-      border: 2px solid #bfa46f;
-      color: #bfa46f;
-      font-weight: bold;
-      padding: 0.9rem 2.4rem;
-      font-size: 1rem;
+      border: 2px solid #e5a200;
+      color: #e5a200;
+      font-weight: 600;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
       cursor: pointer;
-      border-radius: 0.4rem;
+      border-radius: 50px;
       transition: background-color 0.3s ease, color 0.3s ease;
+      text-transform: uppercase;
     }
+
     .cta button:hover {
-      background-color: #bfa46f;
-      color: #0a0a0a;
+      background-color: #e5a200;
+      color: #101010;
     }
+
+    /* Auctions Section */
     .auctions {
-      padding: 5rem 4rem;
-      background-color: #0d0d0d;
+      padding: 7rem 4rem;
+      background-color: #121212;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2.5rem;
+      position: relative;
     }
+
     .auction-card {
-      background-color: #121212;
+      background-color: #1e1e1e;
       padding: 2rem;
-      border-radius: 1.2rem;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.03);
+      border-radius: 1.5rem;
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
+
     .auction-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 35px rgba(255, 215, 0, 0.05);
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
     }
+
     .auction-card img {
       width: 100%;
       border-radius: 0.6rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
     }
+
+    .auction-card img:hover {
+      transform: scale(1.05);
+    }
+
     .auction-card h3 {
       font-family: 'Cinzel', serif;
-      color: #e0e0e0;
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      color: #e5a200;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
     }
+
     .auction-card p {
-      font-size: 0.95rem;
-      color: #888;
-      line-height: 1.5;
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.6;
+      font-weight: 400;
     }
+
+    /* Footer */
     footer {
       padding: 3rem 2rem;
       text-align: center;
-      font-size: 0.8rem;
-      color: #555;
-      background-color: #0a0a0a;
-      border-top: 1px solid #1e1e1e;
+      font-size: 1rem;
+      color: #777;
+      background-color: #101010;
+      border-top: 1px solid #2c2c2c;
+    }
+    
+    footer a {
+      color: #e5a200;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -118,17 +174,18 @@
   <header>
     <div class="logo">ETERNA</div>
     <nav>
-      <a href="#">Auctions</a>
+      <a href="#">Home</a>
       <a href="#">About</a>
-      <a href="#">Request Access</a>
+      <a href="#">Create Your Avatar</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Legacy Isn’t Found. It’s Auctioned.</h1>
-    <p>Enter a curated world of eternal assets — from consciousness engines to timeless sculptures — reserved for those who transcend time itself.</p>
+    <h1>The Digital World Awaits</h1>
+    <p>Step into an unparalleled, futuristic experience where your digital avatar comes to life, existing forever in a digital space made just for you.</p>
     <div class="cta">
-      <button onclick="generateImage()">Generate AI Avatar</button>
+      <button onclick="generateImage()">Create Your Avatar</button>
     </div>
   </section>
 
@@ -138,11 +195,11 @@
       <h3>001</h3>
       <p>Preserve your essence with a bespoke digital self — an AI companion trained to reflect your legacy long after time forgets.</p>
     </div>
-    <!-- More auction cards can go here -->
+    <!-- Additional auction cards can go here -->
   </section>
 
   <footer>
-    &copy; 2025 Eterna. All rights reserved. Time doesn't wait. Neither should you.
+    &copy; 2025 Eterna. All rights reserved. <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
   </footer>
 
   <script>
@@ -150,7 +207,7 @@
     const endpoint = "https://api.deepai.org/api/text2img"; // DeepAI's text-to-image API endpoint
 
     async function generateImage() {
-      const prompt = "A futuristic digital avatar with glowing features and a sleek, modern design.";
+      const prompt = "A luxurious futuristic avatar with gold accents, glowing neon, and a sleek, digital style.";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
