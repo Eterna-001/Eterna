@@ -4,23 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eterna – The Digital World Awaits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Cinzel:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    
-    body {
       font-family: 'Inter', sans-serif;
-      background-color: #101010;
-      color: #f4f4f4;
-      overflow-x: hidden;
     }
 
-    /* Header */
+    body {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.7), rgba(255, 215, 0, 0.3));
+      color: #e0e0e0;
+      height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
     header {
       padding: 3rem 6rem;
       display: flex;
@@ -28,64 +29,90 @@
       align-items: center;
       border-bottom: 2px solid #2c2c2c;
       position: relative;
+      z-index: 1;
     }
 
     .logo {
       font-family: 'Cinzel', serif;
-      font-size: 2.5rem;
-      color: #e5a200;  /* Golden tone for a luxury feel */
+      font-size: 3rem;
+      color: #ffd700;  /* Gold color */
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 700;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      animation: glowing 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowing {
+      0% {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700;
+      }
+      100% {
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+      }
     }
 
     nav a {
-      color: #ccc;
+      color: #fff;
       margin-left: 3rem;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
       font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #fff;
+      color: #ffd700; /* Gold hover */
     }
 
-    /* Hero Section */
     .hero {
-      padding: 10rem 2rem 6rem;
+      padding: 12rem 2rem 6rem;
       text-align: center;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x800') no-repeat center center fixed;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.8)), url('https://via.placeholder.com/1600x800') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       color: white;
       position: relative;
+      z-index: 1;
+      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8);
     }
 
     .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 4rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4.5rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #e5a200; /* Gold color to emphasize luxury */
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      color: #ffd700; /* Gold */
+      text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7);
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       max-width: 600px;
       margin: 1.5rem auto;
       color: #ddd;
       line-height: 1.8;
       font-weight: 500;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
     }
 
     .cta button {
       background-color: transparent;
-      border: 2px solid #e5a200;
-      color: #e5a200;
+      border: 2px solid #ffd700;
+      color: #ffd700;
       font-weight: 600;
       padding: 1rem 3rem;
       font-size: 1.2rem;
@@ -93,21 +120,25 @@
       border-radius: 50px;
       transition: background-color 0.3s ease, color 0.3s ease;
       text-transform: uppercase;
+      outline: none;
+      box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.6);
     }
 
     .cta button:hover {
-      background-color: #e5a200;
+      background-color: #ffd700;
       color: #101010;
+      box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
     }
 
     /* Auctions Section */
     .auctions {
       padding: 7rem 4rem;
-      background-color: #121212;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.7));
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
+      gap: 3rem;
       position: relative;
+      z-index: 0;
     }
 
     .auction-card {
@@ -117,10 +148,11 @@
       box-shadow: 0 0 35px rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
+      position: relative;
     }
 
     .auction-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
     }
 
@@ -137,14 +169,14 @@
 
     .auction-card h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      color: #e5a200;
+      font-size: 1.8rem;
+      color: #ffd700;
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
 
     .auction-card p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #ccc;
       line-height: 1.6;
       font-weight: 400;
@@ -157,17 +189,24 @@
       font-size: 1rem;
       color: #777;
       background-color: #101010;
-      border-top: 1px solid #2c2c2c;
+      border-top: 2px solid #2c2c2c;
     }
-    
+
     footer a {
-      color: #e5a200;
+      color: #ffd700;
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Additional Interactive Effects */
+    .card-glow:hover {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      transform: translateY(-5px);
+    }
+
   </style>
 </head>
 <body>
@@ -175,8 +214,8 @@
     <div class="logo">ETERNA</div>
     <nav>
       <a href="#">Home</a>
-      <a href="#">About</a>
       <a href="#">Create Your Avatar</a>
+      <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
   </header>
@@ -190,12 +229,12 @@
   </section>
 
   <section class="auctions">
-    <div class="auction-card">
+    <div class="auction-card card-glow">
       <img id="generated-image" src="https://via.placeholder.com/300x200" alt="AI Avatar" />
       <h3>001</h3>
       <p>Preserve your essence with a bespoke digital self — an AI companion trained to reflect your legacy long after time forgets.</p>
     </div>
-    <!-- Additional auction cards can go here -->
+    <!-- Additional auction cards go here -->
   </section>
 
   <footer>
@@ -207,7 +246,7 @@
     const endpoint = "https://api.deepai.org/api/text2img"; // DeepAI's text-to-image API endpoint
 
     async function generateImage() {
-      const prompt = "A luxurious futuristic avatar with gold accents, glowing neon, and a sleek, digital style.";
+      const prompt = "A luxurious futuristic avatar with glowing gold accents, neon patterns, and a sleek digital style.";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
