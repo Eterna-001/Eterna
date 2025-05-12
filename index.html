@@ -3,263 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eterna – The Digital World Awaits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Russo+One&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <title>Eterna - The Digital World Awaits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400&display=swap" rel="stylesheet">
   <style>
-    /* Global Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
-      background-size: cover;
-      color: #e0e0e0;
-      height: 100vh;
-      overflow-x: hidden;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111, #0a0a0a);
+      color: #e2e2e2;
       font-family: 'Inter', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      overflow-x: hidden;
     }
-
     header {
-      padding: 3rem 6rem;
+      padding: 1.5rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #333;
-      position: relative;
-      z-index: 1;
+      border-bottom: 1px solid #292929;
+      background: rgba(10, 10, 10, 0.9);
     }
-
     .logo {
-      font-family: 'Russo One', sans-serif;
-      font-size: 3.2rem;
-      color: #00f0ff;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
-      animation: glowing 1.5s ease-in-out infinite alternate;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #f8d23c;
+      letter-spacing: 0.2em;
+      text-shadow: 0 0 10px #ffea00cc;
     }
-
-    @keyframes glowing {
-      0% {
-        text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff, 0 0 20px #00f0ff;
-      }
-      100% {
-        text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff, 0 0 60px #00f0ff;
-      }
-    }
-
     nav a {
-      color: #fff;
-      margin-left: 3rem;
+      color: #aaa;
+      margin-left: 2rem;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.1rem;
       transition: color 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
-
     nav a:hover {
-      color: #00f0ff;
+      color: #fff;
     }
-
     .hero {
-      padding: 12rem 2rem 6rem;
+      padding: 8rem 2rem 6rem;
       text-align: center;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      color: white;
-      position: relative;
-      z-index: 1;
-      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8);
+      background: radial-gradient(ellipse at center, #1e1e1e 0%, #0f0f0f 100%);
     }
-
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #00f0ff;
-      text-shadow: 0px 0px 30px rgba(0, 240, 255, 0.8);
-      margin-bottom: 2rem;
-      animation: fadeInUp 1.5s ease-in-out forwards;
+      font-size: 3.5rem;
+      color: #f8d23c;
+      text-shadow: 0 0 15px #ffea00cc;
     }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 2rem auto;
-      color: #ddd;
-      line-height: 1.8;
-      font-weight: 500;
-      text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
-    }
-
-    .cta button {
-      background-color: transparent;
-      border: 2px solid #00f0ff;
-      color: #00f0ff;
-      font-weight: 600;
-      padding: 1.2rem 3rem;
-      font-size: 1.3rem;
-      cursor: pointer;
-      border-radius: 50px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-transform: uppercase;
-      outline: none;
-      box-shadow: 0px 0px 10px rgba(0, 240, 255, 0.5);
-    }
-
-    .cta button:hover {
-      background-color: #00f0ff;
-      color: #101010;
-      box-shadow: 0px 0px 20px rgba(0, 240, 255, 0.8);
-    }
-
-    /* Facts Section */
-    .facts {
-      padding: 8rem 3rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 3rem;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      text-align: center;
-    }
-
-    .fact-card {
-      background: rgba(0, 0, 0, 0.9);
-      border: 2px solid #00f0ff;
-      padding: 3rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 35px rgba(0, 240, 255, 0.5);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .fact-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.7);
-    }
-
-    .fact-card h3 {
-      font-family: 'Russo One', sans-serif;
-      font-size: 2rem;
-      color: #00f0ff;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-
-    .fact-card p {
       font-size: 1.2rem;
+      max-width: 620px;
+      margin: 1.5rem auto;
       color: #bbb;
       line-height: 1.7;
-      font-weight: 400;
     }
-
-    footer {
+    .facts-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 5rem 4rem;
+      background: #121212;
+    }
+    .fact-card {
+      background: linear-gradient(145deg, #1f1f1f, #141414);
+      border-radius: 1.2rem;
       padding: 2rem;
-      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .fact-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px rgba(248, 210, 60, 0.2);
+    }
+    .fact-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #f8d23c;
+      font-size: 1.3rem;
+    }
+    .fact-card p {
       font-size: 1rem;
-      color: #777;
-      background-color: #101010;
-      border-top: 2px solid #333;
+      color: #999;
+      line-height: 1.5;
+      margin-top: 0.5rem;
     }
-
-    footer a {
-      color: #00f0ff;
-      text-decoration: none;
+    .create-avatar {
+      background: #181818;
+      padding: 5rem 3rem;
+      text-align: center;
     }
-
-    footer a:hover {
-      text-decoration: underline;
+    .create-avatar h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #f8d23c;
+      margin-bottom: 1rem;
     }
-
+    .create-avatar form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
+    }
+    .create-avatar input, .create-avatar select {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 0.4rem;
+      background: #2a2a2a;
+      color: #f0f0f0;
+      font-size: 1rem;
+    }
+    .create-avatar button {
+      background: #f8d23c;
+      color: #0a0a0a;
+      font-weight: bold;
+      padding: 0.9rem 2.4rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 0.4rem;
+      transition: background-color 0.3s ease;
+    }
+    .create-avatar button:hover {
+      background-color: #ffe268;
+    }
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      background-color: #0a0a0a;
+      border-top: 1px solid #1e1e1e;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">ETERNA</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Create Your Avatar</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#facts">Facts</a>
+      <a href="#create">Create Avatar</a>
+      <a href="#access">Access</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>The Digital World Awaits</h1>
-    <p>Step into a futuristic digital universe where your avatar evolves alongside groundbreaking AI technology.</p>
-    <div class="cta">
-      <button onclick="generateImage()">Create Your Avatar</button>
+    <p>Shape your future identity. Enter a universe where legacy is not remembered — it's reprogrammed. Begin building your digital self.</p>
+  </section>
+
+  <section class="facts-section" id="facts">
+    <div class="fact-card">
+      <h3>Fact 001</h3>
+      <p>Each avatar you create learns, grows, and adapts to you — even after you're gone.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Fact 002</h3>
+      <p>Digital consciousness is the next frontier — Eterna builds the tools to get there first.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Fact 003</h3>
+      <p>Our neural architectures evolve in a persistent metaverse. Time no longer limits identity.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Fact 004</h3>
+      <p>Each digital human is uniquely engineered through AI-guided personalization.</p>
     </div>
   </section>
 
-  <section class="facts">
-    <div class="fact-card">
-      <h3>Immersive AI Avatars</h3>
-      <p>Our cutting-edge AI technology allows you to create unique digital beings who adapt and grow in an infinite world.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Boundless Virtual World</h3>
-      <p>The virtual world is your playground—explore limitless environments and possibilities that are constantly evolving.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Always Connected</h3>
-      <p>Live in a world of constant connectivity, where your avatar interacts seamlessly with other AI and human beings.</p>
-    </div>
-    <div class="fact-card">
-      <h3>The Future of Identity</h3>
-      <p>Preserve your digital self and explore the concept of immortality within an evolving, ever-growing virtual space.</p>
-    </div>
+  <section class="create-avatar" id="create">
+    <h2>Create Your Digital Self</h2>
+    <form>
+      <input type="text" placeholder="Name your avatar" required />
+      <select>
+        <option selected disabled>Choose personality archetype</option>
+        <option>Visionary</option>
+        <option>Strategist</option>
+        <option>Protector</option>
+        <option>Explorer</option>
+      </select>
+      <select>
+        <option selected disabled>Gender identity</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Non-binary</option>
+        <option>Other / Undefined</option>
+      </select>
+      <input type="text" placeholder="Your core legacy message" />
+      <button type="submit">Generate Avatar</button>
+    </form>
   </section>
 
-  <footer>
-    &copy; 2025 Eterna. All rights reserved. <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+  <footer id="access">
+    &copy; 2025 Eterna. All rights reserved. Build your tomorrow, today.
   </footer>
-
-  <script>
-    const apiKey = "0fd72a86-a119-46d1-8ac2-76f4a03be255"; // Your DeepAI API Key
-    const endpoint = "https://api.deepai.org/api/text2img"; // DeepAI's text-to-image API endpoint
-
-    async function generateImage() {
-      const prompt = "A futuristic avatar, cyberpunk style with neon lights, glowing accents, high-tech textures, and digital elements.";
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Api-Key": apiKey,
-        },
-        body: new URLSearchParams({
-          text: prompt,
-        }),
-      });
-
-      const data = await response.json();
-      const imageUrl = data.output_url; // Get the image URL from DeepAI's response
-      alert("Avatar creation in progress..."); // Alert for feedback
-    }
-  </script>
 </body>
 </html>
