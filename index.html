@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eterna - The Digital World Awaits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <title>Eterna – The Digital World Awaits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111, #0a0a0a);
-      color: #e2e2e2;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #121212);
+      color: #e0e0e0;
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
     header {
-      padding: 1.5rem 3rem;
+      padding: 2rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #292929;
-      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid #2a2a2a;
+      background-color: rgba(0, 0, 0, 0.9);
     }
     .logo {
       font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
-      color: #f8d23c;
+      color: #00ffc3;
       letter-spacing: 0.2em;
-      text-shadow: 0 0 10px #ffea00cc;
     }
     nav a {
       color: #aaa;
@@ -36,104 +35,75 @@
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #fff;
+      color: #00ffc3;
     }
     .hero {
-      padding: 8rem 2rem 6rem;
+      padding: 6rem 2rem;
       text-align: center;
-      background: radial-gradient(ellipse at center, #1e1e1e 0%, #0f0f0f 100%);
+      background: linear-gradient(to bottom, #121212, #1a1a1a);
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
-      color: #f8d23c;
-      text-shadow: 0 0 15px #ffea00cc;
+      font-size: 3rem;
+      color: #00ffc3;
     }
     .hero p {
       font-size: 1.2rem;
-      max-width: 620px;
+      max-width: 640px;
       margin: 1.5rem auto;
-      color: #bbb;
-      line-height: 1.7;
+      color: #aaa;
     }
-    .facts-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      padding: 5rem 4rem;
-      background: #121212;
-    }
-    .fact-card {
-      background: linear-gradient(145deg, #1f1f1f, #141414);
-      border-radius: 1.2rem;
-      padding: 2rem;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .fact-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 35px rgba(248, 210, 60, 0.2);
-    }
-    .fact-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      color: #f8d23c;
-      font-size: 1.3rem;
-    }
-    .fact-card p {
-      font-size: 1rem;
-      color: #999;
-      line-height: 1.5;
-      margin-top: 0.5rem;
-    }
-    .create-avatar {
-      background: #181818;
-      padding: 5rem 3rem;
+    .avatar-generator {
+      padding: 4rem 2rem;
       text-align: center;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .create-avatar h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #f8d23c;
+    .avatar-generator h2 {
+      font-size: 2rem;
+      color: #ffd700;
       margin-bottom: 1rem;
     }
-    .create-avatar form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
-    }
-    .create-avatar input, .create-avatar select {
-      width: 100%;
+    .avatar-generator p {
+      color: #ccc;
       margin-bottom: 1rem;
+    }
+    .avatar-generator input {
       padding: 0.8rem;
+      width: 60%;
+      max-width: 500px;
       border: none;
-      border-radius: 0.4rem;
-      background: #2a2a2a;
-      color: #f0f0f0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
       font-size: 1rem;
     }
-    .create-avatar button {
-      background: #f8d23c;
-      color: #0a0a0a;
-      font-weight: bold;
-      padding: 0.9rem 2.4rem;
+    .avatar-generator button {
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4081;
+      color: white;
       font-size: 1rem;
       cursor: pointer;
-      border: none;
-      border-radius: 0.4rem;
-      transition: background-color 0.3s ease;
+      margin-bottom: 1rem;
+      transition: background 0.3s;
     }
-    .create-avatar button:hover {
-      background-color: #ffe268;
+    .avatar-generator button:hover {
+      background-color: #e73370;
+    }
+    #avatarResult img {
+      margin-top: 1.5rem;
+      max-width: 90%;
+      border-radius: 1rem;
+      border: 2px solid #444;
     }
     footer {
-      padding: 3rem 2rem;
+      padding: 2rem;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #666;
-      background-color: #0a0a0a;
-      border-top: 1px solid #1e1e1e;
+      background-color: #101010;
+      border-top: 1px solid #222;
     }
   </style>
 </head>
@@ -141,61 +111,56 @@
   <header>
     <div class="logo">ETERNA</div>
     <nav>
-      <a href="#facts">Facts</a>
-      <a href="#create">Create Avatar</a>
-      <a href="#access">Access</a>
+      <a href="#">Explore</a>
+      <a href="#">Vision</a>
+      <a href="#">Create</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>The Digital World Awaits</h1>
-    <p>Shape your future identity. Enter a universe where legacy is not remembered — it's reprogrammed. Begin building your digital self.</p>
+    <p>Step into a hyperreality where identity is reborn, and artificial life begins. Create, connect, and live through your own AI-driven self.</p>
   </section>
 
-  <section class="facts-section" id="facts">
-    <div class="fact-card">
-      <h3>Fact 001</h3>
-      <p>Each avatar you create learns, grows, and adapts to you — even after you're gone.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Fact 002</h3>
-      <p>Digital consciousness is the next frontier — Eterna builds the tools to get there first.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Fact 003</h3>
-      <p>Our neural architectures evolve in a persistent metaverse. Time no longer limits identity.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Fact 004</h3>
-      <p>Each digital human is uniquely engineered through AI-guided personalization.</p>
-    </div>
-  </section>
-
-  <section class="create-avatar" id="create">
+  <section class="avatar-generator">
     <h2>Create Your Digital Self</h2>
-    <form>
-      <input type="text" placeholder="Name your avatar" required />
-      <select>
-        <option selected disabled>Choose personality archetype</option>
-        <option>Visionary</option>
-        <option>Strategist</option>
-        <option>Protector</option>
-        <option>Explorer</option>
-      </select>
-      <select>
-        <option selected disabled>Gender identity</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Non-binary</option>
-        <option>Other / Undefined</option>
-      </select>
-      <input type="text" placeholder="Your core legacy message" />
-      <button type="submit">Generate Avatar</button>
-    </form>
+    <p>Describe your avatar, and watch it come to life.</p>
+    <input type="text" id="avatarPrompt" placeholder="e.g., A futuristic warrior in neon armor" />
+    <button onclick="generateAvatar()">Generate Avatar</button>
+    <div id="avatarResult"></div>
   </section>
 
-  <footer id="access">
-    &copy; 2025 Eterna. All rights reserved. Build your tomorrow, today.
+  <footer>
+    &copy; 2025 Eterna. All rights reserved. The future is built, not imagined.
   </footer>
+
+  <script>
+    async function generateAvatar() {
+      const prompt = document.getElementById('avatarPrompt').value;
+      const resultContainer = document.getElementById('avatarResult');
+      resultContainer.innerHTML = "Generating avatar...";
+
+      try {
+        const response = await fetch("https://api.deepai.org/api/text2img", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "api-key": "0fd72a86-a119-46d1-8ac2-76f4a03be255",
+          },
+          body: `text=${encodeURIComponent(prompt)}`,
+        });
+
+        const data = await response.json();
+        if (data.output_url) {
+          resultContainer.innerHTML = `<img src="${data.output_url}" alt="Generated Avatar"/>`;
+        } else {
+          resultContainer.innerHTML = "Failed to generate image. Try again.";
+        }
+      } catch (error) {
+        resultContainer.innerHTML = "Error generating avatar.";
+        console.error(error);
+      }
+    }
+  </script>
 </body>
 </html>
