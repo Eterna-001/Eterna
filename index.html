@@ -103,4 +103,132 @@
       background-color: rgba(20, 20, 20, 0.8);
       color: #fff;
       width: 300px;
-      padding
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .fact-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      color: #ff4e50;
+      text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+    }
+
+    .fact-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .fact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem;
+      background-color: #1a1a1a;
+      color: #888;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: #ff4e50;
+    }
+
+    /* Loading Animation */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-text {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="loading-screen">
+    <div class="loading-text">Initializing Avatar Creation...</div>
+  </div>
+
+  <header>
+    <div class="logo">ETERNA</div>
+    <nav>
+      <a href="#">AI Creation</a>
+      <a href="#">Marketplace</a>
+      <a href="#">FAQs</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>The Digital World Awaits</h1>
+    <p>Create your AI companion. Unlock your place in the virtual universe.</p>
+    <div class="cta">
+      <button>Start Your Journey</button>
+    </div>
+  </section>
+
+  <section class="facts">
+    <div class="fact-card">
+      <h3>Create Your AI Avatar</h3>
+      <p>Design a digital version of yourself, ready to explore the limitless world we're building. Build, evolve, and experience your digital self.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Explore a Virtual Universe</h3>
+      <p>Join a thriving digital city. Meet other avatars, explore vast environments, and live out your virtual dreams.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Marketplace</h3>
+      <p>Trade, sell, and buy unique in-game assets. Own exclusive items to enhance your digital existence.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Eterna. All rights reserved. Step into the future, one avatar at a time. | <a href="#">Privacy Policy</a>
+  </footer>
+
+  <script>
+    // Loading Screen Timeout Simulation
+    setTimeout(function() {
+      document.querySelector('.loading-screen').style.display = 'none';
+    }, 3000); // Remove after 3 seconds
+  </script>
+</body>
+</html>
