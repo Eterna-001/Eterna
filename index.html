@@ -14,26 +14,8 @@
       overflow-x: hidden;
     }
 
-    @keyframes gradientShift {
-      0% {
-        background: linear-gradient(to right, #ff4e50, #f9d423);
-      }
-      25% {
-        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-      }
-      50% {
-        background: linear-gradient(to right, #00c6ff, #0072ff);
-      }
-      75% {
-        background: linear-gradient(to right, #8e44ad, #3498db, #1abc9c);
-      }
-      100% {
-        background: linear-gradient(to right, #ff4e50, #f9d423);
-      }
-    }
-
     .hero {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -57,7 +39,7 @@
     .hero p {
       font-size: 1.4rem;
       color: #ddd;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
     }
 
@@ -81,51 +63,6 @@
       box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
     }
 
-    .generator {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .generator input {
-      padding: 1rem;
-      width: 60%;
-      max-width: 400px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 1rem;
-      background: #1a1a1a;
-      color: #fff;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-      margin-bottom: 1rem;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .generator button {
-      display: inline-block;
-      background-color: #00c6ff;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-family: 'Orbitron', sans-serif;
-      border-radius: 1rem;
-      cursor: pointer;
-      box-shadow: 0 0 20px rgba(0, 198, 255, 0.8);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .generator button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(0, 198, 255, 1);
-    }
-
-    .generator #avatarResult {
-      margin-top: 2rem;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff;
-      font-family: 'Orbitron', sans-serif;
-    }
-
     .facts {
       display: flex;
       justify-content: center;
@@ -147,73 +84,49 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .fact-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      color: #ff4e50;
-      text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
-    }
-
-    .fact-card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #ddd;
-    }
-
     .fact-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
     }
 
-    footer {
-      padding: 2rem;
-      background-color: #1a1a1a;
-      color: #888;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      color: #ff4e50;
-    }
-
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+    .avatar-generator {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      z-index: 1000;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 1rem;
     }
 
-    .loading-text {
-      font-size: 2rem;
+    .avatar-generator input {
+      padding: 1rem;
+      font-size: 1rem;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 0.5rem;
+      border: none;
+      margin-bottom: 1rem;
+      background-color: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 0 10px #ff4e50;
+    }
+
+    .avatar-generator button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #ff4e50;
+      border: none;
+      border-radius: 2rem;
       color: #fff;
       font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      animation: pulse 1.5s infinite alternate;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff4e50;
     }
 
-    @keyframes pulse {
-      0% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
+    #avatarResult {
+      margin-top: 2rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -226,29 +139,29 @@
     <h1>The Digital World Awaits</h1>
     <p>Create your AI companion. Unlock your place in the virtual universe.</p>
     <div class="cta">
-      <button id="startJourneyButton">Start Your Journey</button>
+      <button onclick="document.getElementById('avatarSection').scrollIntoView({ behavior: 'smooth' })">Start Your Journey</button>
     </div>
+  </section>
 
-    <div class="generator">
-      <input type="text" id="avatarPrompt" placeholder="Describe your digital self..." />
-      <br />
-      <button onclick="generateAvatar()">Generate Avatar</button>
-      <div id="avatarResult"></div>
-    </div>
+  <section id="avatarSection" class="avatar-generator">
+    <h2>Create Your Digital Self</h2>
+    <input type="text" id="avatarPrompt" placeholder="Describe your avatar (e.g., neon samurai hacker)..." />
+    <button onclick="generateAvatar()">Generate Avatar</button>
+    <div id="avatarResult"></div>
   </section>
 
   <section class="facts">
     <div class="fact-card">
       <h3>Create Your AI Avatar</h3>
-      <p>Design a digital version of yourself, ready to explore the limitless world we're building.</p>
+      <p>Design a digital version of yourself, ready to explore the limitless world we're building. Build, evolve, and experience your digital self.</p>
     </div>
     <div class="fact-card">
       <h3>Explore a Virtual Universe</h3>
-      <p>Join a thriving digital city. Meet others, explore vast environments, and evolve.</p>
+      <p>Join a thriving digital city. Meet other avatars, explore vast environments, and live out your virtual dreams.</p>
     </div>
     <div class="fact-card">
       <h3>Marketplace</h3>
-      <p>Buy and sell digital assets. Own exclusive gear and enhancements.</p>
+      <p>Trade, sell, and buy unique in-game assets. Own exclusive items to enhance your digital existence.</p>
     </div>
   </section>
 
@@ -257,36 +170,35 @@
   </footer>
 
   <script>
-    // Hide loading screen after short delay
-    window.addEventListener("load", function() {
-      setTimeout(function() {
-        document.getElementById("loadingScreen").style.display = 'none';
-      }, 1500);
-    });
+    // Remove loading screen after 3 seconds
+    setTimeout(() => {
+      document.getElementById("loadingScreen").style.display = "none";
+    }, 3000);
 
-    // Start Journey button manually hides loading screen
-    document.getElementById("startJourneyButton").addEventListener("click", function() {
-      document.getElementById("loadingScreen").style.display = 'none';
-    });
-
-    // Avatar Generator
-    function generateAvatar() {
+    async function generateAvatar() {
       const prompt = document.getElementById("avatarPrompt").value;
-      const result = document.getElementById("avatarResult");
+      const resultContainer = document.getElementById("avatarResult");
+      resultContainer.innerHTML = "<p style='color:#ff4e50;'>Generating...</p>";
 
-      if (!prompt.trim()) {
-        result.innerHTML = "<p style='color:red;'>Please describe your digital self first.</p>";
-        return;
+      try {
+        const response = await fetch("https://api.deepai.org/api/text2img", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "api-key": "0fd72a86-a119-46d1-8ac2-76f4a03be255"
+          },
+          body: `text=${encodeURIComponent(prompt)}`
+        });
+
+        const data = await response.json();
+        if (data.output_url) {
+          resultContainer.innerHTML = `<img src="${data.output_url}" alt="AI Avatar" style="max-width:100%;border-radius:12px;margin-top:20px;box-shadow:0 0 20px #ff4e50;" />`;
+        } else {
+          resultContainer.innerHTML = "<p style='color:#f66;'>Something went wrong. Try again.</p>";
+        }
+      } catch (error) {
+        resultContainer.innerHTML = "<p style='color:#f66;'>Error: " + error.message + "</p>";
       }
-
-      const names = ["NeonGhost", "EchoShade", "NovaAI", "ByteSoul", "Zenthara", "PulseWraith"];
-      const random = names[Math.floor(Math.random() * names.length)];
-
-      result.innerHTML = `
-        <h3>Your AI Avatar</h3>
-        <p><strong>Name:</strong> ${random}</p>
-        <p><strong>Description:</strong> "${prompt}"</p>
-      `;
     }
   </script>
 </body>
