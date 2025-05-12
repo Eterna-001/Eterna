@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eterna – The Digital World Awaits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Cinzel:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Russo+One&family=Inter:wght@400&display=swap" rel="stylesheet">
   <style>
     /* Global Reset */
     * {
@@ -15,11 +15,15 @@
     }
 
     body {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.7), rgba(255, 215, 0, 0.3));
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
+      background-size: cover;
       color: #e0e0e0;
       height: 100vh;
       overflow-x: hidden;
       font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     header {
@@ -27,28 +31,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #2c2c2c;
+      border-bottom: 2px solid #333;
       position: relative;
       z-index: 1;
     }
 
     .logo {
-      font-family: 'Cinzel', serif;
-      font-size: 3rem;
-      color: #ffd700;  /* Gold color */
+      font-family: 'Russo One', sans-serif;
+      font-size: 3.2rem;
+      color: #00f0ff;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      font-weight: 700;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      font-weight: 600;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
       animation: glowing 1.5s ease-in-out infinite alternate;
     }
 
     @keyframes glowing {
       0% {
-        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700;
+        text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff, 0 0 20px #00f0ff;
       }
       100% {
-        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+        text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff, 0 0 60px #00f0ff;
       }
     }
 
@@ -59,16 +63,18 @@
       font-weight: 500;
       font-size: 1.1rem;
       transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     nav a:hover {
-      color: #ffd700; /* Gold hover */
+      color: #00f0ff;
     }
 
     .hero {
       padding: 12rem 2rem 6rem;
       text-align: center;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.8)), url('https://via.placeholder.com/1600x800') no-repeat center center fixed;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       color: white;
@@ -79,12 +85,12 @@
 
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 4.5rem;
+      font-size: 5rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #ffd700; /* Gold */
-      text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7);
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.2em;
+      color: #00f0ff;
+      text-shadow: 0px 0px 30px rgba(0, 240, 255, 0.8);
+      margin-bottom: 2rem;
       animation: fadeInUp 1.5s ease-in-out forwards;
     }
 
@@ -100,111 +106,94 @@
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 1.5rem auto;
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 2rem auto;
       color: #ddd;
       line-height: 1.8;
       font-weight: 500;
-      text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+      text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
     }
 
     .cta button {
       background-color: transparent;
-      border: 2px solid #ffd700;
-      color: #ffd700;
+      border: 2px solid #00f0ff;
+      color: #00f0ff;
       font-weight: 600;
-      padding: 1rem 3rem;
-      font-size: 1.2rem;
+      padding: 1.2rem 3rem;
+      font-size: 1.3rem;
       cursor: pointer;
       border-radius: 50px;
       transition: background-color 0.3s ease, color 0.3s ease;
       text-transform: uppercase;
       outline: none;
-      box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.6);
+      box-shadow: 0px 0px 10px rgba(0, 240, 255, 0.5);
     }
 
     .cta button:hover {
-      background-color: #ffd700;
+      background-color: #00f0ff;
       color: #101010;
-      box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
+      box-shadow: 0px 0px 20px rgba(0, 240, 255, 0.8);
     }
 
-    /* Auctions Section */
-    .auctions {
-      padding: 7rem 4rem;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(48, 48, 48, 0.7));
+    /* Facts Section */
+    .facts {
+      padding: 8rem 3rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 3rem;
-      position: relative;
-      z-index: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
     }
 
-    .auction-card {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 0 35px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .fact-card {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid #00f0ff;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.5);
+      position: relative;
       overflow: hidden;
-      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .auction-card:hover {
+    .fact-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.7);
     }
 
-    .auction-card img {
-      width: 100%;
-      border-radius: 0.6rem;
+    .fact-card h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 2rem;
+      color: #00f0ff;
       margin-bottom: 1.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .auction-card img:hover {
-      transform: scale(1.05);
-    }
-
-    .auction-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
       text-transform: uppercase;
     }
 
-    .auction-card p {
-      font-size: 1.1rem;
-      color: #ccc;
-      line-height: 1.6;
+    .fact-card p {
+      font-size: 1.2rem;
+      color: #bbb;
+      line-height: 1.7;
       font-weight: 400;
     }
 
-    /* Footer */
     footer {
-      padding: 3rem 2rem;
+      padding: 2rem;
       text-align: center;
       font-size: 1rem;
       color: #777;
       background-color: #101010;
-      border-top: 2px solid #2c2c2c;
+      border-top: 2px solid #333;
     }
 
     footer a {
-      color: #ffd700;
+      color: #00f0ff;
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
-    }
-
-    /* Additional Interactive Effects */
-    .card-glow:hover {
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-      transform: translateY(-5px);
     }
 
   </style>
@@ -222,19 +211,29 @@
 
   <section class="hero">
     <h1>The Digital World Awaits</h1>
-    <p>Step into an unparalleled, futuristic experience where your digital avatar comes to life, existing forever in a digital space made just for you.</p>
+    <p>Step into a futuristic digital universe where your avatar evolves alongside groundbreaking AI technology.</p>
     <div class="cta">
       <button onclick="generateImage()">Create Your Avatar</button>
     </div>
   </section>
 
-  <section class="auctions">
-    <div class="auction-card card-glow">
-      <img id="generated-image" src="https://via.placeholder.com/300x200" alt="AI Avatar" />
-      <h3>001</h3>
-      <p>Preserve your essence with a bespoke digital self — an AI companion trained to reflect your legacy long after time forgets.</p>
+  <section class="facts">
+    <div class="fact-card">
+      <h3>Immersive AI Avatars</h3>
+      <p>Our cutting-edge AI technology allows you to create unique digital beings who adapt and grow in an infinite world.</p>
     </div>
-    <!-- Additional auction cards go here -->
+    <div class="fact-card">
+      <h3>Boundless Virtual World</h3>
+      <p>The virtual world is your playground—explore limitless environments and possibilities that are constantly evolving.</p>
+    </div>
+    <div class="fact-card">
+      <h3>Always Connected</h3>
+      <p>Live in a world of constant connectivity, where your avatar interacts seamlessly with other AI and human beings.</p>
+    </div>
+    <div class="fact-card">
+      <h3>The Future of Identity</h3>
+      <p>Preserve your digital self and explore the concept of immortality within an evolving, ever-growing virtual space.</p>
+    </div>
   </section>
 
   <footer>
@@ -246,7 +245,7 @@
     const endpoint = "https://api.deepai.org/api/text2img"; // DeepAI's text-to-image API endpoint
 
     async function generateImage() {
-      const prompt = "A luxurious futuristic avatar with glowing gold accents, neon patterns, and a sleek digital style.";
+      const prompt = "A futuristic avatar, cyberpunk style with neon lights, glowing accents, high-tech textures, and digital elements.";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -259,7 +258,7 @@
 
       const data = await response.json();
       const imageUrl = data.output_url; // Get the image URL from DeepAI's response
-      document.getElementById("generated-image").src = imageUrl; // Update the image on the page
+      alert("Avatar creation in progress..."); // Alert for feedback
     }
   </script>
 </body>
