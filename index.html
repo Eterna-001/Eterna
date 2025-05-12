@@ -229,7 +229,7 @@
     <h1>The Digital World Awaits</h1>
     <p>Create your AI companion. Unlock your place in the virtual universe.</p>
     <div class="cta">
-      <button>Start Your Journey</button>
+      <button onclick="showAvatarCreation()">Start Your Journey</button>
     </div>
   </section>
 
@@ -248,17 +248,11 @@
     </div>
   </section>
 
-  <section class="avatar-generator">
+  <section class="avatar-generator" id="avatarGenerator" style="display:none;">
     <h2>Create Your Digital Self</h2>
     <input type="text" id="avatarPrompt" placeholder="Describe your digital self..." />
     <button onclick="generateAvatar()">Generate Avatar</button>
     <div id="avatarResult" class="avatar-result"></div>
   </section>
 
-  <section class="welcome-screen" id="welcomeScreen" style="display:none;">
-    <h2>Welcome to Eterna</h2>
-    <div class="avatar-preview">
-      <img id="generatedAvatar" src="" alt="Your Avatar" />
-    </div>
-    <div class="ai-dialogue">
-      “I’ve been waiting. You’ve taken the
+  <section class="welcome
