@@ -221,7 +221,7 @@
   </style>
 </head>
 <body>
-  <div class="loading-screen">
+  <div class="loading-screen" id="loadingScreen">
     <div class="loading-text">Initializing Avatar Creation...</div>
   </div>
 
@@ -255,4 +255,24 @@
     <div id="avatarResult" class="avatar-result"></div>
   </section>
 
-  <section class="welcome
+  <section class="welcome-screen" id="welcomeScreen" style="display:none;">
+    <h2>Welcome to Eterna</h2>
+    <div class="avatar-preview">
+      <img id="generatedAvatar" src="" alt="Your Avatar" />
+    </div>
+    <div class="ai-dialogue">
+      “I’ve been waiting. You’ve taken the first step into your new life. Let’s unlock your potential.”
+    </div>
+    <button onclick="startExploration()">Start Exploring</button>
+  </section>
+
+  <script>
+    function showAvatarCreation() {
+      // Hide the hero section and show the avatar creation section
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.facts').style.display = 'none';
+      document.getElementById('avatarGenerator').style.display = 'block';
+    }
+
+    function generateAvatar() {
+      const avatarPrompt = document.getElementById('avatarPrompt').value
