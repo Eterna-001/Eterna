@@ -128,30 +128,43 @@
     <h1>Legacy Isn’t Found. It’s Auctioned.</h1>
     <p>Enter a curated world of eternal assets — from consciousness engines to timeless sculptures — reserved for those who transcend time itself.</p>
     <div class="cta">
-      <button>Request Access</button>
+      <button onclick="generateImage()">Generate AI Avatar</button>
     </div>
   </section>
 
   <section class="auctions">
     <div class="auction-card">
-      <img src="https://via.placeholder.com/300x200" " />
+      <img id="generated-image" src="https://via.placeholder.com/300x200" alt="AI Avatar" />
       <h3>001</h3>
       <p>Preserve your essence with a bespoke digital self — an AI companion trained to reflect your legacy long after time forgets.</p>
     </div>
-    <div class="auction-card">
-      <img src="https://via.placeholder.com/300x200" " />
-      <h3>002</h3>
-      <p>A cryogenic archive of your genetic code, sealed deep in a quantum-secure vault for generations yet unborn.</p>
-    </div>
-    <div class="auction-card">
-      <img src="https://via.placeholder.com/300x200" " />
-      <h3>003</h3>
-      <p>An engraved blackstone artifact placed in a secretive world location — an echo of your name through centuries of silence.</p>
-    </div>
+    <!-- More auction cards can go here -->
   </section>
 
   <footer>
     &copy; 2025 Eterna. All rights reserved. Time doesn't wait. Neither should you.
   </footer>
+
+  <script>
+    const apiKey = "0fd72a86-a119-46d1-8ac2-76f4a03be255"; // Your DeepAI API Key
+    const endpoint = "https://api.deepai.org/api/text2img"; // DeepAI's text-to-image API endpoint
+
+    async function generateImage() {
+      const prompt = "A futuristic digital avatar with glowing features and a sleek, modern design.";
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Api-Key": apiKey,
+        },
+        body: new URLSearchParams({
+          text: prompt,
+        }),
+      });
+
+      const data = await response.json();
+      const imageUrl = data.output_url; // Get the image URL from DeepAI's response
+      document.getElementById("generated-image").src = imageUrl; // Update the image on the page
+    }
+  </script>
 </body>
 </html>
