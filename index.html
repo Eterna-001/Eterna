@@ -8,155 +8,99 @@
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to right, #1b1b1b, #333333); /* Smooth black to grey gradient */
-      color: #e0e0e0;
+      background: linear-gradient(to right, #111, #2a2a2a); /* Deep dark background */
       font-family: 'Roboto', sans-serif;
+      color: #eee;
       overflow-x: hidden;
     }
-    header {
-      padding: 2rem 5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #444;
+
+    /* Animated Gradient Background */
+    @keyframes gradientShift {
+      0% {
+        background: linear-gradient(to right, #ff4e50, #f9d423);
+      }
+      25% {
+        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+      }
+      50% {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+      }
+      75% {
+        background: linear-gradient(to right, #8e44ad, #3498db, #1abc9c);
+      }
+      100% {
+        background: linear-gradient(to right, #ff4e50, #f9d423);
+      }
     }
-    .logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      color: #b8e0ff;
-      letter-spacing: 0.1em;
-    }
-    nav a {
-      color: #aaa;
-      margin-left: 2rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #fff;
-    }
+
+    /* Hero Section */
     .hero {
-      padding: 10rem 4rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: gradientShift 8s infinite alternate;
       text-align: center;
-      background: url('https://via.placeholder.com/1600x900') center/cover no-repeat; /* Futuristic cyberpunk city background */
-      background-size: cover;
-      position: relative;
       color: white;
-      z-index: 1;
+      padding: 2rem;
     }
+
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 4rem;
+      font-size: 5rem;
       color: #fff;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5), 0px 0px 30px rgba(255, 0, 0, 0.5);
+      margin-bottom: 1.5rem;
     }
+
     .hero p {
       font-size: 1.4rem;
-      max-width: 700px;
-      margin: 1.5rem auto;
       color: #ddd;
-      line-height: 1.7;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+      margin-bottom: 3rem;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
     }
+
+    /* Button */
     .cta button {
-      background-color: #0f7cb8;
+      background-color: #ff4e50;
       border: none;
-      color: #fff;
-      padding: 1.2rem 3rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      border-radius: 0.6rem;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      font-family: 'Orbitron', sans-serif;
+      padding: 1.5rem 3rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      border-radius: 3rem;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+      transition: all 0.3s ease-in-out;
+      letter-spacing: 0.1em;
     }
+
     .cta button:hover {
-      transform: scale(1.05);
-      background-color: #077ba7;
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
     }
+
     .cta button:focus {
       outline: none;
     }
+
+    /* Facts Section */
     .facts {
       display: flex;
-      justify-content: space-evenly;
-      padding: 5rem 4rem;
-      background-color: #222;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      flex-wrap: wrap;
+      padding: 2rem;
     }
+
     .fact-card {
-      background-color: #444;
-      color: #ddd;
-      width: 30%;
-      padding: 2.5rem;
-      text-align: center;
-      border-radius: 1rem;
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .fact-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #f4f4f4;
-    }
-    .fact-card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #bbb;
-    }
-    .fact-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.8);
-    }
-    footer {
-      padding: 3rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      background-color: #1b1b1b;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">ETERNA</div>
-    <nav>
-      <a href="#">AI Creation</a>
-      <a href="#">Marketplace</a>
-      <a href="#">FAQs</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>The Digital World Awaits</h1>
-    <p>Create your AI companion. Unlock your place in the virtual universe.</p>
-    <div class="cta">
-      <button>Start Your Journey</button>
-    </div>
-  </section>
-
-  <section class="facts">
-    <div class="fact-card">
-      <h3>Create Your AI Avatar</h3>
-      <p>Design a digital version of yourself, ready to explore the limitless world we're building. Build, evolve, and experience your digital self.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Explore a Virtual Universe</h3>
-      <p>Join a thriving digital city. Meet other avatars, explore vast environments, and live out your virtual dreams.</p>
-    </div>
-    <div class="fact-card">
-      <h3>Marketplace</h3>
-      <p>Trade, sell, and buy unique in-game assets. Own exclusive items to enhance your digital existence.</p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Eterna. All rights reserved. Step into the future, one avatar at a time.
-  </footer>
-</body>
-</html>
+      background-color: rgba(20, 20, 20, 0.8);
+      color: #fff;
+      width: 300px;
+      padding
