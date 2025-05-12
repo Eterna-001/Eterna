@@ -88,6 +88,38 @@
       outline: none;
     }
 
+    /* Loading Animation */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-text {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
     /* Facts Section */
     .facts {
       display: flex;
@@ -149,54 +181,24 @@
       color: #ff4e50;
     }
 
-    /* Loading Animation */
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .loading-text {
-      font-size: 2rem;
-      color: #fff;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      animation: pulse 1.5s infinite alternate;
-    }
-
-    @keyframes pulse {
-      0% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="loading-screen" id="loading-screen">
+  <!-- Loading Screen -->
+  <div class="loading-screen">
     <div class="loading-text">Initializing Avatar Creation...</div>
   </div>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>The Digital World Awaits</h1>
     <p>Create your AI companion. Unlock your place in the virtual universe.</p>
     <div class="cta">
-      <button onclick="startJourney()">Start Your Journey</button>
+      <button id="startJourneyButton">Start Your Journey</button>
     </div>
   </section>
 
+  <!-- Facts Section -->
   <section class="facts">
     <div class="fact-card">
       <h3>Create Your AI Avatar</h3>
@@ -212,19 +214,35 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Eterna. All rights reserved. Step into the future, one avatar at a time. | <a href="#">Privacy Policy</a>
   </footer>
 
+  <!-- Avatar Creation Section -->
+  <section class="avatar-generator">
+    <h2>Create Your Digital Self</h2>
+    <input type="text" id="avatarPrompt" placeholder="Describe your digital self..." />
+    <button onclick="generateAvatar()">Generate Avatar</button>
+    <div id="avatarResult" class="avatar-result"></div>
+  </section>
+
+  <!-- JavaScript Code -->
   <script>
-    // Loading Screen Timeout Simulation
-    function startJourney() {
-      const loadingScreen = document.getElementById('loading-screen');
-      loadingScreen.style.opacity = 0;  // Fade out the loading screen
-      setTimeout(function() {
-        loadingScreen.style.display = 'none';  // Hide the loading screen after fade
-      }, 1000);  // Wait for 1 second to complete the fade
-    }
-  </script>
-</body>
-</html>
+    // Function to hide loading screen after button click
+    document.getElementById("startJourneyButton").addEventListener("click", function() {
+      document.querySelector('.loading-screen').style.display = 'none';
+    });
+
+    // Function to generate avatar
+    async function generateAvatar() {
+      const prompt = document.getElementById("avatarPrompt").value;
+      const resultContainer = document.getElementById("avatarResult");
+      resultContainer.innerHTML = "Generating...";
+
+      try {
+        const response = await fetch("https://api.deepai.org/api/text2img", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "api-key
