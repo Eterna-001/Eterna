@@ -6,6 +6,15 @@
   <title>Eterna – The Digital World Awaits</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
   <style>
+    @keyframes gradientShift {
+      0% {
+        background: linear-gradient(to right, #111, #2a2a2a);
+      }
+      100% {
+        background: linear-gradient(to right, #1c1c1c, #3a0d0d);
+      }
+    }
+
     body {
       margin: 0;
       background: linear-gradient(to right, #111, #2a2a2a);
@@ -21,9 +30,11 @@
       align-items: center;
       flex-direction: column;
       animation: gradientShift 8s infinite alternate;
+      background: linear-gradient(to right, #111, #2a2a2a);
       text-align: center;
       color: white;
       padding: 2rem;
+      box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.3);
     }
 
     .hero h1 {
@@ -93,6 +104,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       margin-top: 3rem;
       padding: 2rem;
       background: rgba(0, 0, 0, 0.5);
