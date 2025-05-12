@@ -8,13 +8,12 @@
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to right, #111, #2a2a2a); /* Deep dark background */
+      background: linear-gradient(to right, #111, #2a2a2a);
       font-family: 'Roboto', sans-serif;
       color: #eee;
       overflow-x: hidden;
     }
 
-    /* Animated Gradient Background */
     @keyframes gradientShift {
       0% {
         background: linear-gradient(to right, #ff4e50, #f9d423);
@@ -33,9 +32,8 @@
       }
     }
 
-    /* Hero Section */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,11 +57,10 @@
     .hero p {
       font-size: 1.4rem;
       color: #ddd;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
     }
 
-    /* Button */
     .cta button {
       background-color: #ff4e50;
       border: none;
@@ -84,43 +81,51 @@
       box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
     }
 
-    .cta button:focus {
-      outline: none;
+    .generator {
+      margin-top: 3rem;
+      text-align: center;
     }
 
-    /* Loading Animation */
-    .loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .loading-text {
-      font-size: 2rem;
+    .generator input {
+      padding: 1rem;
+      width: 60%;
+      max-width: 400px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 1rem;
+      background: #1a1a1a;
       color: #fff;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+      margin-bottom: 1rem;
       font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      animation: pulse 1.5s infinite alternate;
     }
 
-    @keyframes pulse {
-      0% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
+    .generator button {
+      display: inline-block;
+      background-color: #00c6ff;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.8);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Facts Section */
+    .generator button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 198, 255, 1);
+    }
+
+    .generator #avatarResult {
+      margin-top: 2rem;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
     .facts {
       display: flex;
       justify-content: center;
@@ -162,7 +167,6 @@
       box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
     }
 
-    /* Footer */
     footer {
       padding: 2rem;
       background-color: #1a1a1a;
@@ -181,65 +185,109 @@
       color: #ff4e50;
     }
 
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-text {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
     <div class="loading-text">Initializing Avatar Creation...</div>
   </div>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>The Digital World Awaits</h1>
     <p>Create your AI companion. Unlock your place in the virtual universe.</p>
     <div class="cta">
       <button id="startJourneyButton">Start Your Journey</button>
     </div>
+
+    <div class="generator">
+      <input type="text" id="avatarPrompt" placeholder="Describe your digital self..." />
+      <br />
+      <button onclick="generateAvatar()">Generate Avatar</button>
+      <div id="avatarResult"></div>
+    </div>
   </section>
 
-  <!-- Facts Section -->
   <section class="facts">
     <div class="fact-card">
       <h3>Create Your AI Avatar</h3>
-      <p>Design a digital version of yourself, ready to explore the limitless world we're building. Build, evolve, and experience your digital self.</p>
+      <p>Design a digital version of yourself, ready to explore the limitless world we're building.</p>
     </div>
     <div class="fact-card">
       <h3>Explore a Virtual Universe</h3>
-      <p>Join a thriving digital city. Meet other avatars, explore vast environments, and live out your virtual dreams.</p>
+      <p>Join a thriving digital city. Meet others, explore vast environments, and evolve.</p>
     </div>
     <div class="fact-card">
       <h3>Marketplace</h3>
-      <p>Trade, sell, and buy unique in-game assets. Own exclusive items to enhance your digital existence.</p>
+      <p>Buy and sell digital assets. Own exclusive gear and enhancements.</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Eterna. All rights reserved. Step into the future, one avatar at a time. | <a href="#">Privacy Policy</a>
   </footer>
 
-  <!-- Avatar Creation Section -->
-  <section class="avatar-generator">
-    <h2>Create Your Digital Self</h2>
-    <input type="text" id="avatarPrompt" placeholder="Describe your digital self..." />
-    <button onclick="generateAvatar()">Generate Avatar</button>
-    <div id="avatarResult" class="avatar-result"></div>
-  </section>
-
-  <!-- JavaScript Code -->
   <script>
-    // Hide loading screen once the page has loaded
+    // Hide loading screen after short delay
     window.addEventListener("load", function() {
       setTimeout(function() {
         document.getElementById("loadingScreen").style.display = 'none';
-      }, 1500); // Ensures it's removed after 1.5 seconds (enough time to display the animation)
+      }, 1500);
     });
 
-    // Hide loading screen after the "Start Your Journey" button is clicked
+    // Start Journey button manually hides loading screen
     document.getElementById("startJourneyButton").addEventListener("click", function() {
       document.getElementById("loadingScreen").style.display = 'none';
     });
+
+    // Avatar Generator
+    function generateAvatar() {
+      const prompt = document.getElementById("avatarPrompt").value;
+      const result = document.getElementById("avatarResult");
+
+      if (!prompt.trim()) {
+        result.innerHTML = "<p style='color:red;'>Please describe your digital self first.</p>";
+        return;
+      }
+
+      const names = ["NeonGhost", "EchoShade", "NovaAI", "ByteSoul", "Zenthara", "PulseWraith"];
+      const random = names[Math.floor(Math.random() * names.length)];
+
+      result.innerHTML = `
+        <h3>Your AI Avatar</h3>
+        <p><strong>Name:</strong> ${random}</p>
+        <p><strong>Description:</strong> "${prompt}"</p>
+      `;
+    }
   </script>
 </body>
 </html>
